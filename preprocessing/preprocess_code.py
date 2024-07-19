@@ -385,7 +385,7 @@ import tensorflow_hub as hub
 
 # download the tonkenizer 
 !wget --quiet https://raw.githubusercontent.com/tensorflow/models/master/official/nlp/bert/tokenization.py
-import tokenizatio
+import tokenization
 
 module_url = "https://tfhub.dev/tensorflow/bert_en_uncased_L-24_H-1024_A-16/1"
 bert_layer = hub.KerasLayer(module_url, trainable=True)
@@ -427,10 +427,7 @@ from keras.preprocessing.sequence import pad_sequences
 padded_emb = pad_sequences(vectorized_emb, maxlen = max_len)
 
 #2) PyTorch
-import torch
-from torch.nn.utils.rnn import pad_sequence
-
-padded_sequences = pad_sequence(vectorized_emb, batch_first=True, padding_value=0)
+t
 
 #3) HuggingFace
 from transformers import BertTokenizer
