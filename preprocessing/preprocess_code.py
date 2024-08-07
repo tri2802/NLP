@@ -423,11 +423,7 @@ bert_input = bert_encode(train_df["text"].values, tokenizer, max_len=300)
 #1) Keras
 from keras.preprocessing.sequence import pad_sequences
 
-
 padded_emb = pad_sequences(vectorized_emb, maxlen = max_len)
-
-#2) PyTorch
-t
 
 #3) HuggingFace
 from transformers import BertTokenizer
